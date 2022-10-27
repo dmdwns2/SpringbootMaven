@@ -13,7 +13,7 @@ import java.util.Map;
 public class PutController {
 
 
-    @PostMapping(value = "/member3")
+    @PutMapping(value = "/member3")
     public ResponseEntity postMember3(@RequestBody MemberDto memberDto) {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(memberDto);
     }
