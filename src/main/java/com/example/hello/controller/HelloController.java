@@ -52,6 +52,7 @@ public class HelloController {
 
     }
 
+    //http://localhost:8080/api/v1/get-api/request3?name=dmdwns&email=dmdwns@dmdwns.com&organization=멋사&age=29
     @GetMapping(value = "/request3")
     public String getRequestParam3(MemberDto memberDto) {
         return memberDto.toString();
