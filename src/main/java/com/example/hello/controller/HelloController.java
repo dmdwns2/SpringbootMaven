@@ -27,6 +27,7 @@ public class HelloController {
         return var;
     }
 
+    //http://localhost:8080/api/v1/get-api/request1?name=dmdwns&email=dmdwns@dmdwns.com&organization=멋사
     @GetMapping(value = "/request1") // request1을 받는 getendpoint
     public String getRequestParam1( // 3개의 param값 받기
             @RequestParam String name,
