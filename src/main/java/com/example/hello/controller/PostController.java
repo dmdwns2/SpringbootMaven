@@ -2,6 +2,7 @@ package com.example.hello.controller;
 
 
 import com.example.hello.domain.dto.MemberDto;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -38,16 +39,9 @@ public class PostController {
         return sb.toString();
 
     }
-    // http://localhost:8080/api/v1/post-api/member2
-    // Body
-    // {
-    //  "name":"dmdwns",
-    //  "email" : "dmdwns@dmdwns.com",
-    //  "age" : 36,
-    //  "IsMarried" : 1
-    //}
     @PostMapping(value = "/member2")
     public MemberDto postMember2(@RequestBody MemberDto memberDto) {
         return memberDto;
     }
+
 }
