@@ -27,12 +27,12 @@ public class HelloController {
         return var;
     }
 
-    @GetMapping(value = "/request1")
-    public String getRequestParam1(
+    @GetMapping(value = "/request1") // request1을 받는 getendpoint
+    public String getRequestParam1( // 3개의 param값 받기
             @RequestParam String name,
             @RequestParam String email,
             @RequestParam String organization
     ) {
-        return name + " " + email + " " + organization;
+        return name + " " + email + " " + organization; // return하게 하기
     }
 }
