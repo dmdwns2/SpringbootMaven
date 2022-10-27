@@ -39,6 +39,8 @@ public class HelloController {
         return name + " " + email + " " + organization; // return하게 하기
     }
 
+
+    //http://localhost:8080/api/v1/get-api/request2?name=dmdwns&email=dmdwns@dmdwns.com&organization=멋사&age=29
     @GetMapping(value = "/request2")
     public String getRequestParam2 (@RequestParam Map<String, String> param){
         param.entrySet().forEach((map)-> {
