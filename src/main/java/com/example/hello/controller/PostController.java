@@ -21,6 +21,13 @@ public class PostController {
         return "hello Post API";
     }
     // http://localhost:8080/api/v1/post-api/member1
+    // Body
+    // {
+    //  "name":"dmdwns",
+    //  "email" : "dmdwns@dmdwns.com",
+    //  "age" : 36,
+    //  "IsMarried" : 1
+    //}
     @PostMapping(value = "/member1")
     public String postMember(@RequestBody Map<String, Object> postData) { // Object로 하는이유 어떤 타입으로 들어올 지 서버 입장에서는 몰라서
         StringBuilder sb = new StringBuilder();
@@ -32,6 +39,13 @@ public class PostController {
 
     }
     // http://localhost:8080/api/v1/post-api/member2
+    // Body
+    // {
+    //  "name":"dmdwns",
+    //  "email" : "dmdwns@dmdwns.com",
+    //  "age" : 36,
+    //  "IsMarried" : 1
+    //}
     @PostMapping(value = "/member2")
     public MemberDto postMember2(@RequestBody MemberDto memberDto) {
         return memberDto;
