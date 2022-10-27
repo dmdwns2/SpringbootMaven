@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostController {
 
     //  http://localhost:8080/api/v1/post-api/domain
-    //{
+    // Body
+    // {
     //  "name":"dmdwns",
     //  "email" : dmdwns@dmdwns.com
     //}
