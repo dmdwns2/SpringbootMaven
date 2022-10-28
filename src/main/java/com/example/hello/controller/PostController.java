@@ -2,6 +2,7 @@ package com.example.hello.controller;
 
 
 import com.example.hello.domain.dto.MemberDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/post-api")
+@Slf4j
 public class PostController {
 
     //  http://localhost:8080/api/v1/post-api/domain
@@ -19,6 +21,7 @@ public class PostController {
     //}
     @RequestMapping(value = "/domain", method = RequestMethod.POST)
     public String postExample() {
+        log.info("postExample 요청이 들어왔습니다.");
         return "hello Post API";
     }
     // http://localhost:8080/api/v1/post-api/member1
@@ -36,11 +39,14 @@ public class PostController {
         postData.entrySet().forEach(map -> {
             sb.append(map.getKey() + " : " + map.getValue() + "\n");
         });
+        log.info("postMember 요청이 들어왔습니다.");
         return sb.toString();
 
     }
     @PostMapping(value = "/member2")
     public MemberDto postMember2(@RequestBody MemberDto memberDto) {
+
+        log.info("postMember2 요청이 들어왔습니다.");
         return memberDto;
     }
 
