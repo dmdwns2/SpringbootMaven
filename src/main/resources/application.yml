@@ -3,20 +3,20 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.h2.Driver
     url: jdbc:h2:mem://localhost:3306/likelion-db;MODE=MYSQL
-    username: sa
-    password:
+    username: root
+    password: 12345678
+    hikari:
+      jdbc-url: jdbc:h2:mem://localhost:3306/likelion-db;MODE=MYSQL
   h2:
     console:
       enabled: true
 
-logging:
+      path=/h2:
+      logging:
   level:
     root: info
 
-spring.datasource.url: jdbc:h2:mem:test
-spring.datasource.driverClassName: org.h2.Driver
-spring.datasource.username: root
-spring.datasource.password: 12345678
-spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+
+
