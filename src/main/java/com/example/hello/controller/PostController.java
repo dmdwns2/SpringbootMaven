@@ -52,10 +52,10 @@ public class PostController {
         return memberDto;
     }
 
-    @PostMapping(value = "/add1")
-    public MemberDto add1(@RequestBody MemberDto memberDto){
-        UserDao userDao = new UserDao(memberDto);
-
-    }
+//    @PostMapping(value = "/add1")
+//    public MemberDto add1(@RequestBody MemberDto memberDto){
+//        UserDao userDao = new UserDao(memberDto);
+//
+//    }
 
 }
