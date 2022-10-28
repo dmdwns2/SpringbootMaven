@@ -12,12 +12,10 @@ import java.util.List;
 
 @Component
 public class UserDao {
-    private final DataSource dataSource;
-    private final JdbcTemplate jdbcTemplate;
 
-    public UserDao(DataSource dataSource, JdbcTemplate jdbcTemplate) {
-        this.dataSource = dataSource;
-        this.jdbcTemplate = jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
+    public UserDao(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     RowMapper<User> rowMapper = new RowMapper<User>() {
