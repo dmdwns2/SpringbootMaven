@@ -1,6 +1,7 @@
 package com.example.hello.controller;
 
 
+import com.example.hello.dao.UserDao;
 import com.example.hello.domain.dto.MemberDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import java.util.Map;
 @RequestMapping("/api/v1/post-api")
 @Slf4j
 public class PostController {
+
 
     //  http://localhost:8080/api/v1/post-api/domain
     // Body
@@ -48,6 +50,12 @@ public class PostController {
 
         log.info("postMember2 요청이 들어왔습니다.");
         return memberDto;
+    }
+
+    @PostMapping(value = "/add1")
+    public MemberDto add1(@RequestBody MemberDto memberDto){
+        UserDao userDao = new UserDao(memberDto);
+
     }
 
 }
