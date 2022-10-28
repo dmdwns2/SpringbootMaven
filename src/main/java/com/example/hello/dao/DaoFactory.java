@@ -11,7 +11,7 @@ public class DaoFactory {
 
     //H2
     @Bean
-    UserDao H2UserDao(){
+    UserDao h2UserDao(){
         return new UserDao(h2DataSource());
     }
     DataSource h2DataSource() {
