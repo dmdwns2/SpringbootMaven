@@ -14,10 +14,9 @@ import java.util.List;
 public class UserDao {
     private final JdbcTemplate jdbcTemplate;
 
-    public UserDao(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public UserDao(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
-
     RowMapper<User> rowMapper = new RowMapper<User>() {
         @Override
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -27,10 +26,7 @@ public class UserDao {
             return user;
         }
     };
-//
-//    public UserDao(DataSource dataSource) {
-//        this.jdbcTemplate = new JdbcTemplate(dataSource);
-//    }
+
 
     public void add(final User user) {
         this.jdbcTemplate.update("INSERT INTO user(id, name, password) VALUES(?,?,?);",
