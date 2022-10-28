@@ -54,10 +54,4 @@ public class UserDao {
         return this.jdbcTemplate.query(sql, rowMapper);
     }
 
-    public static void main(String[] args) {
-        UserDao userDao = new UserDao();
-        User user = userDao.findById("6");
-        System.out.println(user.getName());
-
-    }
 }
