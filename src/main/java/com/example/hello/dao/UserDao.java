@@ -1,11 +1,10 @@
 package com.example.hello.dao;
 
 import com.example.hello.domain.User;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -17,6 +16,7 @@ import java.util.List;
 public class UserDao {
 
     private final JdbcTemplate jdbcTemplate;
+
     public UserDao(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
