@@ -17,6 +17,14 @@ spring:
       logging:
   level:
     root: info
+  jpa:
+    properties:
+      hibernate:
+        dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+        dialect.storage_engine = innodb
+    show-sql: true
+
+
 
 
 
