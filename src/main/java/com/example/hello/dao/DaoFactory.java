@@ -14,6 +14,7 @@ public class DaoFactory {
     UserDao h2UserDao(){
         return new UserDao(h2DataSource());
     }
+    @Bean
     DataSource h2DataSource() {
         return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
                 .setName("likelion-db;MODE=MySQL")
